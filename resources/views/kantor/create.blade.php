@@ -5,25 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Kantor</title>
+    <link href="../style.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Tambah Kantor</h1>
 
-    @if (session('success'))
-    <p>{{ session('success') }}</p>
-    @endif
+    <nav>
+        <h1>Website Kantor.</h1>
+    </nav>
 
-    <form action="{{ route('kantor.store') }}" method="POST">
-        @csrf
-        <label for="nama_kantor">Nama Kantor:</label>
-        <input type="text" id="nama_kantor" name="nama_kantor" required>
-        <br>
+    <div class="container">
+        <h1>Tambah Kantor</h1><br>
 
-        <button type="submit">Simpan</button>
-    </form>
+        @if (session('success'))
+        <p>{{ session('success') }}</p>
+        @endif
 
-    <a href="{{ route('kantor.index') }}">Kembali ke Daftar Kantor</a>
+        <form action="{{ route('kantor.store') }}" method="POST">
+            @csrf
+            <label for="nama_kantor">Nama Kantor:</label><br><br>
+            <input placeholder="nama kantor mu" type="text" id="nama_kantor" name="nama_kantor" required>
+            <br>
+
+            <button type="submit">Simpan</button>
+        </form>
+
+        <a href="{{ route('kantor.index') }}">Kembali ke Daftar Kantor</a>
+    </div>
+
 </body>
 
 </html>
